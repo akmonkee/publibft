@@ -6,7 +6,7 @@
 /*   By: msisto <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:40:22 by msisto            #+#    #+#             */
-/*   Updated: 2024/01/23 11:29:26 by msisto           ###   ########.fr       */
+/*   Updated: 2024/01/25 12:05:39 by msisto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	exclude(char s)
 
 int	ft_atoi(const char *str)
 {
-	int	num;
-	int	seg;
+	long int	num;
+	int			seg;
 
 	seg = 0;
 	num = 0;
