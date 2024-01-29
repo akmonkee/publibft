@@ -6,7 +6,7 @@
 #    By: msisto <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/10 11:05:32 by msisto            #+#    #+#              #
-#    Updated: 2024/01/19 15:36:35 by msisto           ###   ########.fr        #
+#    Updated: 2024/01/29 13:29:15 by msisto           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,14 @@ SRC = \
 	ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_striteri.c
 
+BSRC = \
+       ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+       ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstiter.c \
+       ft_lstmap.c \
 
 OUT = $(SRC:.c=.o)
+
+BOUT = $(BSRC:.c=.o)
 
 CC = gcc
 
@@ -31,13 +37,16 @@ FLAGS = -Wall -Werror -Wextra
 .c.o:
 	${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
 
-$(NAME) : $(OUT) 
+$(NAME) : $(OUT)
 	ar rsc $(NAME) $(OUT)
 
 all: $(NAME)
 
+bonus: $(BOUT)
+	ar rsc $(NAME) $(BOUT)
+
 clean: 
-	rm -f $(OUT)
+	rm -f $(OUT) $(BOUT)
 
 fclean: clean
 	rm -f $(NAME)
